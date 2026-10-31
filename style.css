@@ -1,0 +1,37 @@
+html, body { margin:0; padding:0; height:100%; font-family: system-ui, sans-serif; }
+#map { position:absolute; inset:0; }
+
+.panel {
+  position:absolute; top:12px; left:12px; z-index:1000;
+  background:#fff; border:2px solid #2e7d32; border-radius:10px;
+  padding:10px 12px; box-shadow:0 2px 6px rgba(0,0,0,.2);
+  min-width:230px;
+}
+.panel h1 { font-size:14px; margin:0 0 8px; color:#2e7d32; }
+.row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.row label { font-size:12px; color:#333; min-width:70px; }
+select, button {
+  font-size:13px; padding:4px 6px; border-radius:6px;
+  border:1px solid #2e7d32; background:#fff; color:#2e7d32; cursor:pointer;
+}
+select, input[type="file"] { flex:1; }
+input[type="file"] { font-size:12px; }
+button:hover { background:#e8f5e9; }
+button:disabled { opacity:.5; cursor:default; }
+.controls { display:flex; gap:6px; margin-top:4px; }
+.controls button { flex:1; }
+
+.legend {
+  position:absolute; bottom:16px; left:12px; z-index:1000;
+  background:#fff; border:1px solid #2e7d32; border-radius:8px;
+  padding:8px 10px; font-size:12px; color:#333;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.legend .bar { height:10px; width:180px; border-radius:4px;
+  background:linear-gradient(to right, #2196f3, #4caf50, #ffeb3b, #f44336); margin:4px 0; }
+.legend .scale { display:flex; justify-content:space-between; font-size:11px; }
+
+.status { position:absolute; top:12px; right:12px; z-index:1000;
+  background:#fff; border:1px solid #2e7d32; border-radius:8px;
+  padding:8px 10px; font-size:12px; color:#333; min-width:160px; }
+.status b { color:#2e7d32; }

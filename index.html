@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teselar — Mapa Sonoro</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="panel">
+  <h1>Rutas sonoras</h1>
+  <div class="row">
+    <label for="archivo">Archivo</label>
+    <input type="file" id="archivo" accept=".json,application/json" />
+  </div>
+  <div class="row">
+    <label for="variable">Dato</label>
+    <select id="variable">
+      <option value="temp">Temperatura</option>
+      <option value="hum">Humedad</option>
+    </select>
+  </div>
+  <div class="row">
+    <label for="velocidad">Velocidad</label>
+    <select id="velocidad">
+      <option value="300">Lenta</option>
+      <option value="120" selected>Normal</option>
+      <option value="40">Rápida</option>
+    </select>
+  </div>
+  <div class="controls">
+    <button id="btnPlay">▶ Reproducir</button>
+    <button id="btnStop" disabled>■ Detener</button>
+  </div>
+</div>
+
+<div class="status" id="status" style="display:none;">
+  Punto <b id="stIdx">0</b>/<span id="stTotal">0</span><br>
+  Valor: <b id="stVal">-</b><br>
+  Frecuencia: <b id="stFreq">-</b> Hz
+</div>
+
+<div class="legend">
+  <div id="legendTitle">Temperatura (°C)</div>
+  <div class="bar"></div>
+  <div class="scale"><span id="legMin">min</span><span id="legMax">max</span></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
