@@ -17,6 +17,7 @@ let audioCtx = null;
 let oscilador = null;
 
 const inputArchivo = document.getElementById('archivo');
+const archivoNombre = document.getElementById('archivoNombre');
 const selVariable = document.getElementById('variable');
 const selVelocidad = document.getElementById('velocidad');
 const btnPlay = document.getElementById('btnPlay');
@@ -129,7 +130,10 @@ function detener() {
 }
 
 inputArchivo.addEventListener('change', () => {
-  if (inputArchivo.files[0]) cargarArchivo(inputArchivo.files[0]);
+  const file = inputArchivo.files[0];
+  if (!file) return;
+  archivoNombre.textContent = file.name;
+  cargarArchivo(file);
 });
 selVariable.addEventListener('change', () => { detener(); dibujarRuta(); });
 btnPlay.addEventListener('click', reproducir);
